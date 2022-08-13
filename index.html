@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=DynaPuff">
+</head>
+<body>
+<center
+
+
+  <!-- Display the countdown timer in an element -->
+  <h1 > We have been dating for<h1>
+
+<img src="banner.png" width="100%" style="max-width:1000px;"talt="Italian Trulli">
+
+<h1 style="font-size:300%; margin-top:-200px;" id="timer"></h1>
+
+<p style="margin-top:100px;">That's a delightfully long time!<p>
+
+<p>Happy Danniversary!<p>
+
+  <img src="cute.png" width="50%" style="max-width:500px;">
+
+
+</body>
+</html>
+<script>
+
+
+// Set the date we're counting down to
+var countDownDate = new Date("Aug 16, 2021 06:30:00").getTime();
+
+// Update the count down every 1 second
+function setTime() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance =  now-countDownDate ;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("timer").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+}
+setTime()
+var x = setInterval(setTime, 1000);
+</script>
