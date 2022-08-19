@@ -17,9 +17,7 @@
 
 <h1 style="font-size:300%; margin-top:-200px;" id="timer"></h1>
 
-<h1 style="margin-top:100px;">That's a dan-lightfully long time!<h1>
-
-<h3 id="comparison"></h1>
+<h1 style="margin-top:100px;" id="comparison"></h1>
 
 <h1>Happy Danniversary!<h1>
 
@@ -88,7 +86,7 @@ function setTime() {
   document.getElementById("timer").innerHTML = days + "d " + hours + "h "
   + minutes + "m " + seconds + "s ";
 
-  document.getElementById("comparison").innerHTML = "(That's " + calcComparison(chosenComparison, distance) + " " + chosenComparison.desc + "!)";
+  document.getElementById("comparison").innerHTML = "That's " + calcComparison(chosenComparison, distance) + " " + chosenComparison.desc + "!";
 }
 
 function calcComparison(comparison, totalMilliseconds) {
