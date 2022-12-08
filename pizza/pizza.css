@@ -1,0 +1,56 @@
+body{
+	background-color: azure;
+	background-image: url("background.jpg");
+	font-family: "Comic Sans MS", cursive, sans-serif	;
+
+
+}
+h1 {
+	font-size: 50px
+}
+
+#message{
+	background-color: rgba(255, 255, 255, 0.5);
+}
+#content{
+width:80%;
+}
+
+#menu {
+    display: table;
+    margin-left: 300px;
+    align-items: center;
+}
+
+button {
+	font-family: "Comic Sans MS", cursive, sans-serif	;
+
+    color: black;
+    text-align: center;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    height: 50px;
+    width: 200px;
+    border: 5px solid black;
+		box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
+
+}
+
+button:hover, #clear:hover{
+	background-image: url("pizza.jpg");
+}
+
+#clear{
+	background-color: gray;
+	font-weight: bold;
+}
+
+#done{
+	background-color: red;
+	font-weight: bold;
+}

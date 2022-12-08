@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="houseplant.css">
+
+  <script src="houseplant.js">
+  </script>
+<link rel="icon" href="happy.gif">
+</head>
+<body>
+<div id='wrapper'>
+<h1 style="font-size:200%;">House Plant Simulator</h1>
+<center><div style="overflow:hidden; align-items:center; display: flex;
+justify-content: center;">
+  <div id='days'>
+  <h1>Days Left:</h1>
+<h1 id="daycount">10</h1>
+<div id="hint" style="display:block">
+<button onclick="check()">Hint</button>
+</div>
+</div>
+<div><img id='image' src="happy.gif" alt="Mountain View" align='middle'></div>
+</div></center>
+
+<center><div id="intro" style="display:block; width:60%; align-items:center">
+  <p>Constantly accidently killing your houseplant is expensive. House Plant Simulator allows you to see if you are fit to take care of another living thing BEFORE you buy. You have three hints and ten days not to kill your plant.</p><p> Good Luck!</p>
+<button onclick="start()">Start</button>
+</div></center>
+
+<div id='buttons' style="display:none">
+<button onclick="water()">Water Plant</button>
+<button onclick="encouage()">Encourage Plant</button>
+<button id='Sun' onclick="toggleSun()">   Move  to  Shade   </button>
+<button onclick="nothing()">Do Nothing</button>
+</div>
+
+<div id='playAgain' style="display:none">
+  <button onclick="playAgain()">Play Again?</button>
+</div>
+
+<p id='output'></p>
+</div>
+
+
+
+
+
+
+</body>
+</html>

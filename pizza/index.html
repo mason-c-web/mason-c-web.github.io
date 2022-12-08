@@ -1,0 +1,233 @@
+<html>
+<head>
+  <link rel="icon" href="pizza.png">
+  <title>Pizza Rater</title>
+
+    <script src="fabric.js"></script>
+    <link rel="stylesheet" type="text/css" href="pizza.css">
+    <audio src="music.mp3" autoplay="autoplay" loop="loop"></audio>
+
+</head>
+<h1 align="center" >Pizza Rater</h1>
+<body>
+<div id="content">
+    <img src="pizzabase.png" style="display:none;"id="pizzabase">
+
+    <img src="mushroom.png" style="display:none;"id="mushroom">
+    <img src="pepperoni.png" style="display:none;"id="pepperoni">
+    <img src="pineapple.png" style="display:none;"id="pineapple">
+    <img src="sauage.png" style="display:none;"id="sausage">
+    <img src="ham.png" style="display:none;"id="ham">
+    <img src="spinch.png" style="display:none;"id="spinach">
+    <img src="tomato.png" style="display:none;"id="tomato">
+
+<div style="float:right;">
+    <canvas id="canvas" width="800" height="800" style="border:1px solid #000000"></canvas>
+
+</div>
+
+<div id='menu'>
+<br>
+<h4 id ="message">Click to add toppings and move them around!</h4>
+
+<div id="buttons">
+
+<button onclick="setMushroom()">Mushroom</button>
+<br>
+<button onclick="setPepperoni()"> Pepperoni</button>
+<br>
+<button onclick="setPineapple()">Pineapple</button>
+<br>
+<button onclick="setSpinach()"> Spinach </button>
+<br>
+<button onclick="setSausage()"> Sausage</button>
+<br>
+<button onclick="setTomato()">  Tomato </button>
+<br>
+<button onclick="setHam()">  Ham	</button>
+<br>
+<button id="clear" onclick="reset()">Clear</button>
+<br>
+<br>
+<button id="done" onclick="done()">Rate</button>
+<br>
+</div>
+<button style = "display:none;" id="playagain" onclick= "playagain()">Try again</button>
+
+
+    </div>
+
+
+
+
+
+    <audio id="plop" src="plop.mp3" ></audio>
+    <audio id="cheer" src="cheer.mp3" ></audio>
+
+
+</body>
+</html>
+    <script>
+function done(){
+  var audio = document.getElementById("cheer");
+  document.getElementById('buttons').style.display = "none";
+  document.getElementById('playagain').style.display = "block";
+  var rating = getRandomInt(0,10);
+  console.log(rating);
+  document.getElementById('message').innerHTML = "Your pizza is: "+ rating +"/10";
+
+  audio.play();
+
+
+}
+
+function playagain() {
+  document.getElementById('buttons').style.display = "block";
+  document.getElementById('playagain').style.display = "none";
+  document.getElementById('message').innerHTML = "Click to add toppings and move them around!";
+
+  reset();
+}
+
+    function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+	function round5(x)
+{
+    return Math.ceil(x/10)*10;
+}
+console.log(round5(getRandomInt(1,100)));
+
+var canvas = new fabric.Canvas('canvas');
+
+
+        //canvas.add(new fabric.Circle({ radius: 350, fill: '#C78145', top:50, left:50 }));
+    var pizzabase = document.getElementById('pizzabase');
+
+   //canvas.add(new fabric.Circle({ radius: 300, fill: '#FFDD14', top:100, left:100 }));
+var makepizza = new fabric.Image(pizzabase, {
+        		left: 30,top: 30,    selectable: false
+});
+        	reset();
+
+        function getTopping(x,y,a,b,topping){
+        for(i=0; i<1; i++ ){
+        	var t= round5(getRandomInt(x,y));
+        	var l= round5(getRandomInt(a,b));
+        	var a = getRandomInt(-180,180);
+        	var imgInstance = new fabric.Image(topping, {
+        		left: l,top: t,originX: 'center',
+originY: 'center',angle: a,hasBorders: false,
+hasControls: false,
+hasRotatingPoint: false});
+        	canvas.add(imgInstance);
+        		 }
+        		}
+
+      function setTopping(topping){
+
+	getTopping(100,200, 300,375, topping);
+	getTopping(100,200, 375,550, topping);
+
+	getTopping(200,300, 100,375, topping);
+	getTopping(200,300, 375,650, topping);
+
+	getTopping(300,400, 100,375, topping);
+	getTopping(300,400, 375,650, topping);
+
+
+	getTopping(400,500, 100,375,topping);
+	getTopping(400,500, 375,650, topping);
+
+
+	getTopping(500,650, 300,275,topping);
+	getTopping(500,650, 275,550,topping);
+
+}
+
+
+
+
+
+        canvas.selectionColor = 'rgba(0,255,0,0.3)';
+        canvas.selectionBorderColor = 'red';
+        canvas.selectionLineWidth = 5;
+
+
+function reset(){
+	console.log("plz");
+		var rect = new fabric.Rect({
+  left: 0,
+  top: 0,
+  fill: 'white',
+  width: 800,
+  height: 800,
+   selectable: false
+});
+
+// "add" rectangle onto canvas
+canvas.add(rect);
+
+  		canvas.add(makepizza);
+
+
+}
+
+
+function setMushroom(){
+	var imgElement = document.getElementById('mushroom');
+ setTopping(imgElement);
+ var audio = document.getElementById("plop");
+  audio.play();
+
+}
+function setHam(){
+	var imgElement = document.getElementById('ham');
+ setTopping(imgElement);
+ var audio = document.getElementById("plop");
+  audio.play();
+
+
+}
+function setPepperoni(){
+	var imgElement = document.getElementById('pepperoni');
+ setTopping(imgElement);
+ var audio = document.getElementById("plop");
+  audio.play();
+
+
+}
+function setPineapple(){
+	var imgElement = document.getElementById('pineapple');
+ setTopping(imgElement);
+ var audio = document.getElementById("plop");
+  audio.play();
+
+
+}
+function setSpinach(){
+	var imgElement = document.getElementById('spinach');
+ setTopping(imgElement);
+ var audio = document.getElementById("plop");
+  audio.play();
+
+}
+function setSausage(){
+	var imgElement = document.getElementById('sausage');
+ setTopping(imgElement);
+ var audio = document.getElementById("plop");
+  audio.play();
+
+}
+
+function setTomato(){
+	var imgElement = document.getElementById('tomato');
+ setTopping(imgElement);
+ var audio = document.getElementById("plop");
+  audio.play();
+
+}
+
+
+
+    </script>

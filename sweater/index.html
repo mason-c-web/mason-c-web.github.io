@@ -1,0 +1,148 @@
+
+<html>
+<head>
+    <title>Sweater Designer</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.7.13/fabric.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="sweatericon.png">
+    <audio src="music.mp3" autoplay="autoplay" loop="loop"></audio>
+
+</head>
+
+<body>
+  <img src="images/base.png" id="base" style="display:none">
+  <img src="images/sweater.png" id="sweater" style="display:none">
+  <img src="images/sweater2.png" id="sweater2" style="display:none">
+  <img src="images/sweater3.png" id="sweater3" style="display:none">
+  <img src="images/sweater4.png" id="sweater4" style="display:none">
+  <img src="images/sweater5.png" id="sweater5" style="display:none">
+
+  <img src="images/dots.png" id="dots" style="display:none">
+  <img src="images/hearts.png" id="hearts" style="display:none">
+  <img src="images/stripes.png" id="stripes" style="display:none">
+  <img src="images/checks.png" id="checks" style="display:none">
+  <img src="images/stars.png" id="stars" style="display:none">
+
+  <img src="images/hearticon.png" id="hearticon" style="display:none">
+  <img src="images/happyicon.png" id="happyicon" style="display:none">
+  <img src="images/cat.png" id="cat" style="display:none">
+  <img src="images/rainbow.png" id="rainbow" style="display:none">
+  <img src="images/cute.png" id="cute" style="display:none">
+<center>
+  <img src="images/title.png" width=1000>
+<div id='parent'>
+<div id='wrapper'>
+<div id='controls'>
+  <div>
+    <img src="images/leftarrow.png" onclick="nextItem('sweater', sweater)"  onmouseover="this.src='images/leftarrow2.png';" onmouseout="this.src='images/leftarrow.png';" >
+  <img src="images/color.png" height=100>
+  <img src="images/rightarrow.png" onclick="previousItem('sweater', sweater)"    onmouseover="this.src='images/rightarrow2.png';" onmouseout="this.src='images/rightarrow.png';">
+</div>
+
+<div>
+  <img src="images/leftarrow.png" onclick="nextItem('pattern', pattern)"  onmouseover="this.src='images/leftarrow2.png';" onmouseout="this.src='images/leftarrow.png';" >
+<img src="images/pattern.png" height=80 >
+<img src="images/rightarrow.png" onclick="previousItem('pattern', pattern)"   onmouseover="this.src='images/rightarrow2.png';" onmouseout="this.src='images/rightarrow.png';">
+</div>
+
+<div>
+<img src="images/leftarrow.png" onclick="nextItem('icon', icon)"  onmouseover="this.src='images/leftarrow2.png';" onmouseout="this.src='images/leftarrow.png';" >
+<img src="images/symbol.png" height=100>
+<img src="images/rightarrow.png" onclick="previousItem('icon', icon)"   onmouseover="this.src='images/rightarrow2.png';" onmouseout="this.src='images/rightarrow.png';">
+</div>
+
+<img src="images/done.png" onclick="done()" onmouseover="this.src='images/done2.png';" onmouseout="this.src='images/done.png';"  >
+
+
+</div>
+
+<div id ="canvas">
+		<canvas id="c"  width ="750" height=900  ></canvas>
+</div>
+
+</div>
+
+</div>
+
+<div id='end' style="display:none">
+<img src="images/end.png" >
+<img src="images/again.png" onmouseover="this.src='images/again2.png';" onmouseout="this.src='images/again.png';" onclick="again()"  >
+</div>
+
+</center>
+</body>
+</html>
+
+
+<script>
+var canvas = this.__canvas = new fabric.Canvas('c');
+var sweater = [ 'sweater2', 'sweater3', 'sweater4', 'sweater5'];
+var pattern = ['dots', 'hearts', 'stripes', 'checks', 'stars']
+var icon = ['hearticon', 'happyicon', 'cat', 'rainbow', 'cute']
+var currOutfit = {
+  sweater: 'sweater',
+  pattern:null,
+  icon: null
+}
+
+addItem('sweater', {left:88, top:325, originX:'left', originY:"top",selectable: false})
+addItem('base', {left:0, top:0, originX:'left', originY:"top",selectable: false})
+
+
+function done(){
+  document.getElementById("end").style.display ="block";
+   document.getElementById("controls").style.display ="none";
+}
+
+function again(){
+  document.getElementById("controls").style.display ="block";
+   document.getElementById("end").style.display ="none";
+    sweater = [ 'sweater2', 'sweater3', 'sweater4', 'sweater5'];
+    pattern = ['dots', 'hearts', 'stripes', 'checks', 'stars']
+    icon = ['hearticon', 'happyicon', 'cat', 'rainbow', 'cute']
+
+   currOutfit = {
+     sweater: 'sweater',
+     pattern:null,
+     icon: null
+   }
+buildOutfit()
+}
+
+
+function buildOutfit(){
+  canvas.clear()
+  addItem(currOutfit.sweater, {left:88, top:325, originX:'left', originY:"top",selectable: false})
+  addItem(currOutfit.pattern, {left:88, top:325, originX:'left', originY:"top",selectable: false})
+  addItem(currOutfit.icon, {left:88, top:325, originX:'left', originY:"top",selectable: false})
+
+  addItem('base', {left:0, top:0, originX:'left', originY:"top",selectable: false})
+}
+
+
+function nextItem(type, array){
+  array.push(currOutfit[type])
+  const curr = array.shift()
+  currOutfit[type] = curr
+  buildOutfit()
+}
+
+
+function previousItem(type, array){
+  array.unshift(currOutfit[type])
+  const curr = array.pop()
+  currOutfit[type] = curr
+  buildOutfit()
+}
+
+
+function addItem(name, settings){
+
+  var imgElement = document.getElementById(name);
+
+  var imgInstance = new fabric.Image(imgElement, settings);
+      imgInstance.hasControls = imgInstance.hasBorders = false;
+  canvas.add(imgInstance);
+}
+
+</script>

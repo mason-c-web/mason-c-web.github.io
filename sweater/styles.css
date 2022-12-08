@@ -1,0 +1,14 @@
+
+
+#wrapper{
+  display: inline-flex;
+ align-items: center;
+}
+
+#parent{
+  margin: 0
+}
+
+#right {
+  flex: 1;
+}
