@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<div id="topBar" >Clare Masoon</div>
+
+<body>
+
+<h1>Games!</h1>
+<p>I like to make simple little website.</p>
+
+<div>
+<table>
+  <tr>
+    <td>Sweater Designer</td>
+    <td>I updated there website</td>
+  </tr>
+  <tr>
+    <td>Pizza Rater/td>
+    <td>Helen Bennett</td>
+  </tr>
+  <tr>
+    <td>Plant Simulator</td>
+    <td>Helen Bennett</td>
+  </tr>
+  <tr>
+    <td>Machine Elf</td>
+    <td>Yoshi Tannamuri</td>
+  </tr>
+</table>
+</div>
+<hr/>
+<p>List of games i have made</p>
+  <p>Fiber Craft Vlog</p>
+
+
+</body>
+</html>

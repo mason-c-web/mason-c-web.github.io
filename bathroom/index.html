@@ -1,0 +1,196 @@
+
+<html>
+<head>
+    <title>Bathroom Designer</title>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.1.0/fabric.all.min.js" ></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+<style>
+
+@font-face {
+    font-family: myFirstFont;
+    src: url(munro.woff);
+}
+
+body{
+  background-color: salmon;
+  font-family: myFirstFont;
+
+}
+#content{
+  border: 7px solid black;
+  background-color: white;
+  margin: auto;
+  padding: 10px;
+  width:95%;
+   overflow: hidden;
+   display:none;
+   text-align: center;
+
+}
+#canvas{
+  border: 7px solid black;
+  float:left;
+margin:auto;
+}
+#menu{
+    float:left;
+    width:30%;
+    margin:auto;
+    text-align: center;
+    padding: 10px;
+    margin-left: 10%;
+
+}
+#items{
+  float:left;
+  margin:auto;
+  text-align: center;
+  border: 7px solid black;
+  background-color: azure;
+
+}
+
+#end{
+  display: none;
+}
+button{
+  margin: 10px;
+  border: 7px solid black;
+  background-color: azure;
+  font-family: myFirstFont;
+font-size: 50px;
+
+}
+
+button:hover {
+    background-color: LightSteelBlue ;
+}
+
+img{
+  padding: 5px;
+  width:75px;
+}
+
+.sticker{
+  width:30px;
+}
+
+#title{
+  text-align: center;
+  width: 1000px;
+  margin: auto;
+}
+
+</style>
+</head>
+
+<body>
+
+
+<div id="title">
+  <img src="images/title.png" style="width:1000px;">
+<button onclick="start()">Start</button>
+</div>
+<div id="content">
+<div id="menu">
+  <div id ="items">
+  <h1>Click to add items to your bathroom</h1>
+
+  <img src="images/toliet paper.png" style="width:50px;" onclick="newItem('toliet paper.png')">
+  <img src="images/plunger.png" onclick="newItem('plunger.png')">
+  <img src="images/eggplant.png" onclick="newItem('eggplant.png')">
+  <img src="images/bow.png" onclick="newItem('bow.png')">
+  <br/>
+
+  <img src="images/duck.png" onclick="newItem('duck.png')">
+  <img src="images/plant.png" onclick="newItem('plant.png')">
+  <img src="images/stawberry.png" onclick="newItem('stawberry.png')">
+  <img src="images/happyface.png" style="width:60px;" onclick="newItem('happyface.png')">
+  <br/>
+  <img class = "sticker" src="images/flower.png" onclick="newItem('flower.png')">
+
+  <img class="sticker" src="images/star.png" onclick="newItem('star.png')">
+  <img class="sticker" src="images/heart.png" onclick="newItem('heart.png')">
+
+</div>
+  <button onclick="end()">Done</button>
+  <br/>
+  <button onclick="reset()">Reset</button>
+</div>
+
+<div id ="canvas">
+		<canvas id="c"  width='552' height="650"  ></canvas>
+</div>
+<div id="end">
+<button onclick="reset()">Play again?</button>
+  <button id="downloadLnk" download="YourBathroom.jpg">Save your bathroom</button>
+
+</div>
+
+</div>
+</body>
+
+
+
+<script>
+</script>
+
+</html>
+<script>
+
+function start(){
+document.getElementById("title").style.display ="none";
+document.getElementById("content").style.display ="block";
+
+}
+
+function drawStart(){
+
+fabric.Image.fromURL('images/background.png', function(img) {
+  canvas.add(img.set({left:0, top:0, originX:'left', originY:"top",selectable: false}).scale(.6));
+  console.log("draw background");
+});
+
+fabric.Image.fromURL('images/toilet.png', function(img) {
+(canvas.add(img.set({left:180, top:110, originX:'left', originY:"top", selectable: false}).scale(.6)).bringToFront());
+console.log("draw toliet");
+});
+
+}
+function newItem(url){
+  fabric.Image.fromURL('images/'+url, function(img) {
+  canvas.add(img.set({left:150, top:150, originX:'left', originY:"top", hasBorders: false,
+hasControls: false,
+hasRotatingPoint: false, selectable: true}).scale(.6));
+  });
+
+}
+
+function reset(){
+  document.getElementById("content").style.display ="block";
+  document.getElementById("end").style.display ="none";
+  document.getElementById("menu").style.display ="block";
+
+  drawStart();
+}
+
+function download() {
+    var dt = canvas.toDataURL('image/jpeg');
+    this.href = dt;
+};
+
+function end(){
+  document.getElementById("menu").style.display ="none";
+  document.getElementById("end").style.display ="block";
+
+}
+
+var canvas = new fabric.Canvas('c');
+$(document).ready(function(){drawStart()})
+
+
+downloadLnk.addEventListener('click', download, false);
+
+</script>

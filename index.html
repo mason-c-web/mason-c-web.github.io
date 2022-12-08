@@ -1,17 +1,95 @@
-<img src="cute.png" width="50%" style="max-width:500px;">
 
 <!DOCTYPE html>
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="style.css">
-  <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=DynaPuff">
 </head>
+<div id="topBar" >Clare Masoon</div>
+
 <body>
 
+<div id="main">
+  <div id = "hello">
+<h1>Hello!</h1>
+  <p>I'm Clare. I'm a software engineer with experiance in fullstack development and Andorid/IOS applications.
+  I previously worked at Nordstrom and Audere. I also love fiber craft and making cute games for my friends.
+ </p>
+ <p>Open to hybrid (in Seattle)/remote software engineering opportunities.
+</p>
 
-<h1>Hello!<h1>
+<a href="">LinkedIn</a>
+  <a href="">Resume</a>
+
+    <a href="">email</a>
+</div>
+
+<div id="comlun" style="display:none">
+  <h1>Community Lunch On Capitol Hill</h1>
+  <img src="https://i.pinimg.com/736x/28/33/e3/2833e35c50ddcd83b4c9ff08ca895620.jpg">
+
+  <p>hello<p/></div>
+
+<div id="sweater" style="display:none">
+  <h1>Sweater Designer</h1>
+  <img src="https://i.pinimg.com/736x/28/33/e3/2833e35c50ddcd83b4c9ff08ca895620.jpg">
+
+  <p>hello<p/></div>
+
+
+<div id="machineelf" style="display:none">
+  <h1>Machine Elfl</h1>
+  <img src="https://i.pinimg.com/736x/28/33/e3/2833e35c50ddcd83b4c9ff08ca895620.jpg">
+
+  <p>hello<p/></div>
+
+
+
+<div >
+  <button onclick="select('comlun')">Community Lunch On Capitol Hill</button>
+  <button onclick="select('sweater')">Sweater Designer</button>
+  <button onclick="select('personal')">Personal Website</button>
+  <button onclick="select('machineelf')">Machine Elf</button>
+</div>
+</div>
+
+<div>
+<h1>Projects</h1>
+<table>
+  <tr>
+    <td>Community Lunch On Capitol Hill</td>
+    <td>I updated there website</td>
+  </tr>
+  <tr>
+    <td>This website</td>
+    <td>Helen Bennett</td>
+  </tr>
+  <tr>
+    <td>Sweater Designer</td>
+    <td>Helen Bennett</td>
+  </tr>
+  <tr>
+    <td>Machine Elf</td>
+    <td>Yoshi Tannamuri</td>
+  </tr>
+</table>
+</div>
+<hr/>
+<p>List of games i have made</p>
+  <p>Fiber Craft Vlog</p>
+
 
 
 </body>
 </html>
+<script>
+let current =document.getElementById('hello')
+function select(name) {
+  console.log('ehhloo');
+  var x = document.getElementById(name);
+  x.style.display = "block";
+  current.style.display = "none";
+  current = x
+
+
+}
+</script>

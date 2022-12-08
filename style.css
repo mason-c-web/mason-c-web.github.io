@@ -1,0 +1,14 @@
+body{
+  background-color:gray;
+  color:white;
+  margin: auto;
+  margin-left: 10%;
+  margin-right:10%;
+}
+#main{
+  display: flex;
+}
+#topBar{
+background-color: red;
+height :20px;
+}
