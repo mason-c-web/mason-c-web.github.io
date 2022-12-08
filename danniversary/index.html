@@ -17,7 +17,7 @@
 
 <h1 style="font-size:300%; margin-top:-200px;" id="timer"></h1>
 
-<h1 style="margin-top:100px;">That's a dan-lightfully long time!<h1>
+<h1 style="margin-top:100px;" id="comparison"></h1>
 
 <h1>Happy Danniversary!<h1>
 
@@ -28,6 +28,41 @@
 </html>
 <script>
 
+// Common time values used in the comparisons
+let second = 1, minute = 60 * second, hour = 60 * minute, day = 24 * hour, week = 7 * day, year = 52 * week;
+
+// A comparison is a description (to describe what it is), a duration (how long it takes per thing, units seconds/thing), and an optional multiplier (to make the math clearer)
+let comparisons = [
+    {
+      desc: "trips to the moon and back",
+      dur:  3 * day, // 3 day one way trip
+      mult: 0.5 // halfway there, halfway back
+    }, {
+      desc:    "fully grown tea plants",
+      dur:     3 * year, // takes 3 years to grow a tea plant apparently
+    }, {
+      desc: "grilled shrimp",
+      dur:  6 * minute, // 1 shrimp grills in about 6 minutes
+      mult: 400 / 9, // can grill about 400/9 shrimps/grill (grill area / size of 1 shrimp)
+    }, {
+      desc: "grilled kebabs",
+      dur:  13 * minute, // 1 kebab grills in about 13 minutes
+      mult: 10, // can grill about 10 kebabs/grill
+    }, {
+      desc: "trips around the world for dumps",
+      dur:  29766.14 / (24.1402 / (60 * 60)), // distance to stops / (km/s)
+    }, {
+      desc: "socks",
+      dur:  (42976 / 30) * 60, // stitch / sock // 30 stitches / min == min / sock * 60 sec / min = sec / sock
+      mult: 2,                 // 2 people making socks
+    }, {
+      desc: "kisses",
+      dur:  3 * second, // 3 seconds per kiss
+    },
+  ];
+
+// Choose a random comparison to display
+var chosenComparison = comparisons[Math.floor(Math.random()*comparisons.length)];
 
 // Set the date we're counting down to
 var countDownDate = new Date("Aug 18, 2021 18:30:00").getTime();
@@ -50,6 +85,22 @@ function setTime() {
   // Display the result in the element with id="demo"
   document.getElementById("timer").innerHTML = days + "d " + hours + "h "
   + minutes + "m " + seconds + "s ";
+
+  document.getElementById("comparison").innerHTML = "That's " + calcComparison(chosenComparison, distance) + " " + chosenComparison.desc + "!";
+}
+
+function calcComparison(comparison, totalMilliseconds) {
+  let totalSeconds = (totalMilliseconds/1000);
+
+  // Calculate amount of thing possible in the given time; the units are seconds / (seconds/ thing), the seconds cancel out so you get units of thing
+  var amount = totalSeconds / comparison.dur;
+
+  if (comparison.mult !== undefined) {
+    amount *= comparison.mult;
+  }
+
+  // Round to two decimal places
+  return amount.toFixed(2);
 }
 setTime()
 var x = setInterval(setTime, 1000);
