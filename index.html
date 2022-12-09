@@ -9,10 +9,11 @@
 <body>
 
 <div id="main">
-  <div id = "hello">
+  <div id="window">
+  <div id = "intro">
 <h1>Hello!</h1>
   <p>I'm Clare. I'm a software engineer with experiance in fullstack development and Andorid/IOS applications.
-  I previously worked at Nordstrom and Audere. I also love fiber craft and making cute games for my friends.
+  I previously worked at Nordstrom and Audere. I also love fiber crafts and making cute art.
  </p>
  <p>Open to hybrid (in Seattle)/remote software engineering opportunities.
 </p>
@@ -23,72 +24,73 @@
     <a href="">email</a>
 </div>
 
-<div id="comlun" style="display:none">
+<div id="profess" style="display:none">
   <h1>Community Lunch On Capitol Hill</h1>
   <img src="https://i.pinimg.com/736x/28/33/e3/2833e35c50ddcd83b4c9ff08ca895620.jpg">
 
-  <p>hello<p/></div>
+  <p>Description of my personal work<p/></div>
 
-<div id="sweater" style="display:none">
-  <h1>Sweater Designer</h1>
+<div id="web" style="display:none">
+  <h1>Web Design</h1>
+<p1>I have some done work with local group to create useful websites.</p1>
+
+  <h1>Community Lunch On Capitol Hill</h1>
+
   <img src="https://i.pinimg.com/736x/28/33/e3/2833e35c50ddcd83b4c9ff08ca895620.jpg">
 
-  <p>hello<p/></div>
+  <p>No questions asked, Community Lunch provides a hot gourmet meal and loads of take away goodies for those experiencing homelessness and under served in the Capitol Hill area
+    I sit on the board, and act as webmaster. In 2022 I did a total webside rehaul that included producing a a short video for the homepage. Volunteer and information about the program and now
+    easy to find! <p/>
+  <h1>Seeds Of Grace</h1>
+  <p>Seeds of Grace was a nonprofit based out of Kitsap County. Their mission was to build community gardens in areas of need. As of 2021 they
+  have gone inactive, but I have arcive the site for my personal use. </p>
+  </div>
 
 
-<div id="machineelf" style="display:none">
+
+    <div id="games" style="display:none">
+      <h1>Machine Elfl</h1>
+      <img src="https://i.pinimg.com/736x/28/33/e3/2833e35c50ddcd83b4c9ff08ca895620.jpg">
+
+      <p>I like making cute web based games, often to share around with my friend and family.
+         All the graphics and coding are done by me. <p/></div>
+
+<div id="hardware" style="display:none">
   <h1>Machine Elfl</h1>
   <img src="https://i.pinimg.com/736x/28/33/e3/2833e35c50ddcd83b4c9ff08ca895620.jpg">
 
   <p>hello<p/></div>
 
 
+  </div>
 
-<div >
-  <button onclick="select('comlun')">Community Lunch On Capitol Hill</button>
-  <button onclick="select('sweater')">Sweater Designer</button>
-  <button onclick="select('personal')">Personal Website</button>
-  <button onclick="select('machineelf')">Machine Elf</button>
+<div id="buttons" >
+   <button id="button" onclick="select('intro')">Intro</button>
+  <button id="button" onclick="select('profess')">Professional Experiance</button>
+  <button id="button" onclick="select('web')">Web Design</button>
+  <button id="button" onclick="select('games')">Games</button>
+  <button id="button" onclick="select('hardware')">Hardware</button>
+  <button id="button" onclick="select('hardware')">Fiber craft blog</button>
+
 </div>
 </div>
 
-<div>
-<h1>Projects</h1>
-<table>
-  <tr>
-    <td>Community Lunch On Capitol Hill</td>
-    <td>I updated there website</td>
-  </tr>
-  <tr>
-    <td>This website</td>
-    <td>Helen Bennett</td>
-  </tr>
-  <tr>
-    <td>Sweater Designer</td>
-    <td>Helen Bennett</td>
-  </tr>
-  <tr>
-    <td>Machine Elf</td>
-    <td>Yoshi Tannamuri</td>
-  </tr>
-</table>
-</div>
 <hr/>
-<p>List of games i have made</p>
-  <p>Fiber Craft Vlog</p>
 
 
 
 </body>
 </html>
 <script>
-let current =document.getElementById('hello')
+let current =document.getElementById('intro')
 function select(name) {
-  console.log('ehhloo');
+  console.log(name, current);
   var x = document.getElementById(name);
+  if( x != current){
   x.style.display = "block";
   current.style.display = "none";
-  current = x
+  current = x;
+}
 
 
 }

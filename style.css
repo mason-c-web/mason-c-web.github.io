@@ -2,13 +2,36 @@ body{
   background-color:gray;
   color:white;
   margin: auto;
-  margin-left: 10%;
-  margin-right:10%;
+  margin-left: 20%;
+  margin-right:20%;
+
+}
+cursor{
+  color:red;
 }
 #main{
   display: flex;
 }
+#window{
+  flex:1;
+  border-width: 1;
+  border-color: red;
+  max-height: 1000px;
+  max-width: 1000px;
+  overflow: auto;
+
+}
 #topBar{
 background-color: red;
 height :20px;
+}
+#buttons{
+  flex-direction: column;
+  width: 20px;
+  color: red;
+}
+#button{
+  margin: 10px;
+  border-radius: 50%;
+
 }
