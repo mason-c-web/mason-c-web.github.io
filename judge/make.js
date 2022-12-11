@@ -8,5 +8,3 @@ console.log(url);
 console.log("yes");
     document.getElementById(clothing).src = url;
 }
-
-
