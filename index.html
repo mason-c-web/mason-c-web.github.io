@@ -3,20 +3,27 @@
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="style.css">
+
 </head>
-<div id="topBar" >Clare Masoon</div>
+
+
 
 <body>
 
 <div id="main">
+  <div id = "frame">
   <div id="window">
   <div id = "intro">
-<h1>Hello!</h1>
-  <p>I'm Clare. I'm a software engineer with experiance in fullstack development and Andorid/IOS applications.
-  I previously worked at Nordstrom and Audere. I also love fiber crafts and making cute art.
+
+<h1 >Hi, I'm Clare Mason</h1>
+<div style="flex-direction:row">
+<img style="width:200px; border-style: dashed; border-width:3px; margin:auto; border-color:yellowgreen" src="test.png">
+  <p> I'm a software engineer with experiance in fullstack development and Andorid/IOS applications.
+  I also love fiber crafts and making cute art. Welcome to my site!
  </p>
  <p>Open to hybrid (in Seattle)/remote software engineering opportunities.
 </p>
+</div>
 
 <a href="">LinkedIn</a>
   <a href="">Resume</a>
@@ -25,13 +32,13 @@
 </div>
 
 <div id="profess" style="display:none">
-  <h1>Community Lunch On Capitol Hill</h1>
-  <img src="https://i.pinimg.com/736x/28/33/e3/2833e35c50ddcd83b4c9ff08ca895620.jpg">
+<h1>Proffesional Experiance</h1>
 
   <p>Description of my personal work<p/></div>
 
 <div id="web" style="display:none">
   <h1>Web Design</h1>
+
 <p1>I have some done work with local group to create useful websites.</p1>
 
   <h1>Community Lunch On Capitol Hill</h1>
@@ -49,42 +56,45 @@
 
 
     <div id="games" style="display:none">
-      <h1>Machine Elfl</h1>
-      <img src="https://i.pinimg.com/736x/28/33/e3/2833e35c50ddcd83b4c9ff08ca895620.jpg">
+      <h1>Games</h1>
 
       <p>I like making cute web based games, often to share around with my friend and family.
-         All the graphics and coding are done by me. <p/></div>
+         All the graphics and coding are done by me. <p/>
+         <p>
+           👚Sweater Designer</p>
+           <p>🍕 Pizza rater</p>
+           <p>🌱Plant Simulator</p>
+           <p>🚽 Extreme bathroom makeover</p>
+       </div>
 
-<div id="hardware" style="display:none">
-  <h1>Machine Elfl</h1>
-  <img src="https://i.pinimg.com/736x/28/33/e3/2833e35c50ddcd83b4c9ff08ca895620.jpg">
 
-  <p>hello<p/></div>
+       <div id="blog" style="display:none">
+         <h1>Arts Blog</h1>
+
+         <p>I'm really into design of all type. I enjoy 3d printing, electorics, fashion design,and knitting and crocheting. If you want to seem more of my projects
+         see my artist blog below.</p>
+
+          </div>
+
 
 
   </div>
-
+</div>
 <div id="buttons" >
    <button id="button" onclick="select('intro')">Intro</button>
   <button id="button" onclick="select('profess')">Professional Experiance</button>
   <button id="button" onclick="select('web')">Web Design</button>
   <button id="button" onclick="select('games')">Games</button>
-  <button id="button" onclick="select('hardware')">Hardware</button>
-  <button id="button" onclick="select('hardware')">Fiber craft blog</button>
+  <button id="button" onclick="select('blog')">Arts blog</button>
 
 </div>
 </div>
-
-<hr/>
-
-
 
 </body>
 </html>
 <script>
 let current =document.getElementById('intro')
 function select(name) {
-  console.log(name, current);
   var x = document.getElementById(name);
   if( x != current){
   x.style.display = "block";
