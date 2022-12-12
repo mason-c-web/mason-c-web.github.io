@@ -3,13 +3,13 @@
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="style.css">
-
+<title>Clare Mason</title>
 </head>
 
 
 
 <body>
-
+<div id="wrapper">
 <div id="main">
   <div id = "frame">
   <div id="window">
@@ -17,7 +17,7 @@
 
 <h1 >Hi, I'm Clare Mason</h1>
 <div style="flex-direction:row">
-<img style="width:200px; border-style: dashed; border-width:3px; margin:auto; border-color:yellowgreen" src="test.png">
+<img  id="self" src="self.png">
   <p> I'm a software engineer with experiance in fullstack development and Andorid/IOS applications.
   I also love fiber crafts and making cute art. Welcome to my site!
  </p>
@@ -25,16 +25,15 @@
 </p>
 </div>
 
-<a href="">LinkedIn</a>
-  <a href="">Resume</a>
-
-    <a href="">email</a>
+<a href="https://www.linkedin.com/in/clarermason/">LinkedIn</a>
+<a href="mailto:clarermason@gmail.com">Email</a>
 </div>
 
-<div id="profess" style="display:none">
-<h1>Proffesional Experiance</h1>
+<div id="work" style="display:none">
+<h1>Work Experience</h1>
 
-  <p>Description of my personal work<p/></div>
+  <p>I worked a <a href="https://www.Nordstrom.com">Nordstrom</a> for several years building internal fullstack applications.
+    I also most recently worked at <a href="https://www.auderenow.org">Audere</a> buidling IOS/Andorid applications<p/></div>
 
 <div id="web" style="display:none">
   <h1>Web Design</h1>
@@ -58,13 +57,13 @@
     <div id="games" style="display:none">
       <h1>Games</h1>
 
-      <p>I like making cute web based games, often to share around with my friend and family.
+      <p>I like making cute web based games, often to share around with my friends and family.
          All the graphics and coding are done by me. <p/>
-         <p>
-           👚Sweater Designer</p>
-           <p>🍕 Pizza rater</p>
-           <p>🌱Plant Simulator</p>
-           <p>🚽 Extreme bathroom makeover</p>
+      <p>👚<a class="gamelink" href="/sweater">Sweater Designer</a> </p>
+      <p>🍕<a class="gamelink" href="./pizza">Pizza Rater</a></p>
+      <p>🌱<a class="gamelink" href="./plant">Plant Simulator</a></p>
+      <p>🚽<a class="gamelink" href="./bathroom">Extreme Bathroom Makeover</a></p>
+
        </div>
 
 
@@ -79,17 +78,22 @@
 
 
   </div>
+
 </div>
+
+<img id="keyboard" src="keyboard.png">
+
+</div>
+
 <div id="buttons" >
    <button id="button" onclick="select('intro')">Intro</button>
-  <button id="button" onclick="select('profess')">Professional Experiance</button>
+  <button id="button" onclick="select('work')">Work Experiance</button>
   <button id="button" onclick="select('web')">Web Design</button>
   <button id="button" onclick="select('games')">Games</button>
   <button id="button" onclick="select('blog')">Arts blog</button>
 
 </div>
 </div>
-
 </body>
 </html>
 <script>

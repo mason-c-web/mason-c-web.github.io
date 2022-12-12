@@ -6,10 +6,35 @@ html{
   background-attachment: fixed;
 
 }
+.gamelink{
+  font-size: 20px
+}
 body{
   color:white;
-  margin: auto;
   font-family: 'Share Tech Mono', monospace;
+margin: auto;
+display: flex;
+}
+#wrapper{
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+
+}
+h1{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#self{
+  width:200px;
+   border-style: dashed;
+    border-width:3px;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+   border-color:yellowgreen;
 }
 cursor{
   color:red;
@@ -38,14 +63,28 @@ a {
   color: white;
 
 }
-
-#buttons{
-  flex:1;
+#keyboard{
+  width:1300px;
   margin: auto;
 }
+#buttons{
+  margin-top:  auto;
+margin-bottom: auto;
+margin-left: -200px
+}
+#button:hover{
+  background-color: yellowgreen;
+  color: black;
+}
 #button{
-  margin: 10px;
-  border-radius: 50%;
+margin: 10px;
   font-family: 'Share Tech Mono', monospace;
+  border-width: 10px;
+  border-color:black;
+  background-color: dimgray;
+  color: white;
+  font-weight: bolder;
+  font-size: 25px;
+  display:block;
 
 }
