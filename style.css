@@ -4,10 +4,17 @@ html{
   background-image: linear-gradient(gray, darkgray);
   background-size: 100%, 100%;
   background-attachment: fixed;
+    font-size: 21px
+
 
 }
 .gamelink{
-  font-size: 20px
+  font-size: 25px
+}
+.image{
+     border-color:yellowgreen;
+     border-style: dashed;
+      border-width:3px;
 }
 body{
   color:white;
@@ -29,12 +36,11 @@ h1{
 
 #self{
   width:200px;
-   border-style: dashed;
-    border-width:3px;
+
     display: block;
   margin-left: auto;
   margin-right: auto;
-   border-color:yellowgreen;
+
 }
 cursor{
   color:red;
