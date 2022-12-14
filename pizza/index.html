@@ -5,10 +5,11 @@
 
     <script src="fabric.js"></script>
     <link rel="stylesheet" type="text/css" href="pizza.css">
-    <audio src="music.mp3" autoplay="autoplay" loop="loop"></audio>
 
 </head>
 <h1 align="center" >Pizza Rater</h1>
+<link rel="preload" href="pizzabase.png" as="image">
+
 <body>
 <div id="content">
     <img src="pizzabase.png" style="display:none;"id="pizzabase">
@@ -96,7 +97,6 @@ function playagain() {
 {
     return Math.ceil(x/10)*10;
 }
-console.log(round5(getRandomInt(1,100)));
 
 var canvas = new fabric.Canvas('canvas');
 
