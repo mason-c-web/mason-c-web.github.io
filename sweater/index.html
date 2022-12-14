@@ -1,43 +1,44 @@
-
 <html>
+
 <head>
-    <title>Sweater Designer</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="sweatericon.png">
+  <title>Sweater Designer</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="sweatericon.png">
 </head>
 
 <body>
-
   <img src="images/title.png" id="title">
-<div id='wrapper'>
-<div id='controls'>
-  <div>
-    <img src="images/leftarrow.png" onclick="nextItem('sweater', sweater)"  onmouseover="this.src='images/leftarrow2.png';" onmouseout="this.src='images/leftarrow.png';" >
-  <img src="images/color.png" height=100>
-  <img src="images/rightarrow.png" onclick="previousItem('sweater', sweater)"    onmouseover="this.src='images/rightarrow2.png';" onmouseout="this.src='images/rightarrow.png';">
-</div>
+  <div id='wrapper'>
+    <div id='controls'>
+      <div>
+        <img src="images/leftarrow.png" onclick="nextItem('sweater', sweater)"
+          onmouseover="this.src='images/leftarrow2.png';" onmouseout="this.src='images/leftarrow.png';">
+        <img src="images/color.png" height=100>
+        <img src="images/rightarrow.png" onclick="previousItem('sweater', sweater)"
+          onmouseover="this.src='images/rightarrow2.png';" onmouseout="this.src='images/rightarrow.png';">
+      </div>
+      <div>
+        <img src="images/leftarrow.png" onclick="nextItem('pattern', pattern)"
+          onmouseover="this.src='images/leftarrow2.png';" onmouseout="this.src='images/leftarrow.png';">
+        <img src="images/pattern.png" height=80>
+        <img src="images/rightarrow.png" onclick="previousItem('pattern', pattern)"
+          onmouseover="this.src='images/rightarrow2.png';" onmouseout="this.src='images/rightarrow.png';">
+      </div>
+      <div>
+        <img src="images/leftarrow.png" onclick="nextItem('icon', icon)" onmouseover="this.src='images/leftarrow2.png';"
+          onmouseout="this.src='images/leftarrow.png';">
+        <img src="images/symbol.png" height=100>
+        <img src="images/rightarrow.png" onclick="previousItem('icon', icon)"
+          onmouseover="this.src='images/rightarrow2.png';" onmouseout="this.src='images/rightarrow.png';">
+      </div>
+      <img src="images/done.png" style="margin-left: 100px" onclick="done()" onmouseover="this.src='images/done2.png';"
+        onmouseout="this.src='images/done.png';">
+    </div>
 
-<div>
-  <img src="images/leftarrow.png" onclick="nextItem('pattern', pattern)"  onmouseover="this.src='images/leftarrow2.png';" onmouseout="this.src='images/leftarrow.png';" >
-<img src="images/pattern.png" height=80 >
-<img src="images/rightarrow.png" onclick="previousItem('pattern', pattern)"   onmouseover="this.src='images/rightarrow2.png';" onmouseout="this.src='images/rightarrow.png';">
-</div>
-
-<div>
-<img src="images/leftarrow.png" onclick="nextItem('icon', icon)"  onmouseover="this.src='images/leftarrow2.png';" onmouseout="this.src='images/leftarrow.png';" >
-<img src="images/symbol.png" height=100>
-<img src="images/rightarrow.png" onclick="previousItem('icon', icon)"   onmouseover="this.src='images/rightarrow2.png';" onmouseout="this.src='images/rightarrow.png';">
-</div>
-
-<img src="images/done.png" style="margin-left: 100px" onclick="done()" onmouseover="this.src='images/done2.png';" onmouseout="this.src='images/done.png';"  >
-
-
-</div>
-
-<div id ="canvas">
-      <img src="images/sweater.png" class="sweater" id="sweater" >
+    <div id="canvas">
+      <img src="images/sweater.png" class="sweater" id="sweater">
       <img src="images/sweater2.png" class="sweater" id="sweater2" style="display:none">
-      <img src="images/sweater3.png" class="sweater "id="sweater3" style="display:none">
+      <img src="images/sweater3.png" class="sweater " id="sweater3" style="display:none">
       <img src="images/sweater4.png" class="sweater" id="sweater4" style="display:none">
       <img src="images/sweater5.png" class="sweater" id="sweater5" style="display:none">
 
@@ -47,101 +48,91 @@
       <img src="images/checks.png" class="pattern" id="checks" style="display:none">
       <img src="images/stars.png" class="pattern" id="stars" style="display:none">
 
-      <img src="images/hearticon.png" class="icon"  id="hearticon" style="display:none">
-      <img src="images/happyicon.png" class="icon"  id="happyicon" style="display:none">
-      <img src="images/cat.png" class="icon"  id="cat" style="display:none">
-      <img src="images/rainbow.png" class="icon"  id="rainbow" style="display:none">
-      <img src="images/cute.png" class="icon"  id="cute" style="display:none">
-      <img src="images/base.png" id="base" >
+      <img src="images/hearticon.png" class="icon" id="hearticon" style="display:none">
+      <img src="images/happyicon.png" class="icon" id="happyicon" style="display:none">
+      <img src="images/cat.png" class="icon" id="cat" style="display:none">
+      <img src="images/rainbow.png" class="icon" id="rainbow" style="display:none">
+      <img src="images/cute.png" class="icon" id="cute" style="display:none">
+      <img src="images/base.png" id="base">
+    </div>
+  </div>
 
-</div>
-
-
-
-
-
-</div>
-<center>
-<div id='end' style="display:none">
-<img src="images/end.png" >
-<img src="images/again.png" onmouseover="this.src='images/again2.png';" onmouseout="this.src='images/again.png';" onclick="again()"  >
-</div>
-</center>
+  <center>
+    <div id='end' style="display:none">
+      <img src="images/end.png">
+      <img src="images/again.png" onmouseover="this.src='images/again2.png';" onmouseout="this.src='images/again.png';"
+        onclick="again()">
+    </div>
+  </center>
 </body>
+
 </html>
 
 
 <script>
-var sweater = [ 'sweater2', 'sweater3', 'sweater4', 'sweater5'];
-var pattern = ['dots', 'hearts', 'stripes', 'checks', 'stars']
-var icon = ['hearticon', 'happyicon', 'cat', 'rainbow', 'cute']
-var currOutfit = {
-  sweater: 'sweater',
-  pattern:null,
-  icon: null
-}
+  var sweater = ['sweater2', 'sweater3', 'sweater4', 'sweater5'];
+  var pattern = ['dots', 'hearts', 'stripes', 'checks', 'stars']
+  var icon = ['hearticon', 'happyicon', 'cat', 'rainbow', 'cute']
+  var currOutfit = {
+    sweater: 'sweater',
+    pattern: null,
+    icon: null
+  }
 
-var prevOutfit = {
-     sweater:null,
-     pattern:null,
-     icon:null,
-   }
+  var prevOutfit = {
+    sweater: null,
+    pattern: null,
+    icon: null,
+  }
 
-function done(){
-  document.getElementById("end").style.display ="block";
-   document.getElementById("controls").style.display ="none";
-}
+  function done() {
+    document.getElementById("end").style.display = "block";
+    document.getElementById("controls").style.display = "none";
+  }
 
-function again(){
-  document.getElementById("controls").style.display ="block";
-   document.getElementById("end").style.display ="none";
-   prevOutfit = currOutfit
-   currOutfit = {
-     sweater: 'sweater',
-     pattern:null,
-     icon: null
-   }
-buildOutfit()
-}
+  function again() {
+    document.getElementById("controls").style.display = "block";
+    document.getElementById("end").style.display = "none";
+    prevOutfit = currOutfit
+    currOutfit = {
+      sweater: 'sweater',
+      pattern: null,
+      icon: null
+    }
+    buildOutfit()
+  }
 
+  function buildOutfit() {
+    addItem(currOutfit.sweater, prevOutfit.sweater)
+    addItem(currOutfit.pattern, prevOutfit.pattern)
+    addItem(currOutfit.icon, prevOutfit.icon)
+  }
 
-function buildOutfit(){
-  addItem(currOutfit.sweater, prevOutfit.sweater)
-   addItem(currOutfit.pattern, prevOutfit.pattern)
-   addItem(currOutfit.icon, prevOutfit.icon)
-}
+  function nextItem(type, array) {
+    array.push(currOutfit[type])
+    const curr = array.shift()
+    prevOutfit[type] = currOutfit[type]
+    currOutfit[type] = curr
+    buildOutfit()
+  }
 
+  function previousItem(type, array) {
+    array.unshift(currOutfit[type])
+    const curr = array.pop()
+    prevOutfit[type] = currOutfit[type]
+    currOutfit[type] = curr
+    buildOutfit()
+  }
 
-function nextItem(type, array){
-  array.push(currOutfit[type])
-  const curr = array.shift()
-  prevOutfit[type]= currOutfit[type]
-  currOutfit[type] = curr
-  buildOutfit()
-}
-
-
-function previousItem(type, array){
-  array.unshift(currOutfit[type])
-  const curr = array.pop()
-  prevOutfit[type]= currOutfit[type]
-  currOutfit[type] = curr
-  buildOutfit()
-}
-
-
-function addItem(curName, prevName){
-if(curName){
-  var cur = document.getElementById(curName);
-  cur.style.display = "block"
-
-}
-if(prevName && prevName!=curName){
-  var prev = document.getElementById(prevName);
-  prev.style.display = "none"
-
-}
-
-}
+  function addItem(curName, prevName) {
+    if (curName) {
+      var cur = document.getElementById(curName);
+      cur.style.display = "block"
+    }
+    if (prevName && prevName != curName) {
+      var prev = document.getElementById(prevName);
+      prev.style.display = "none"
+    }
+  }
 
 </script>

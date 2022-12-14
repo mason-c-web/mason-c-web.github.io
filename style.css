@@ -1,81 +1,97 @@
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
-html{
+html {
   background-image: linear-gradient(gray, darkgray);
   background-size: 100%, 100%;
   background-attachment: fixed;
-    font-size: 21px
+  font-size: 21px
 }
-.gamelink{
+
+body {
+  color: white;
+  font-family: 'Share Tech Mono', monospace;
+  margin: auto;
+  display: flex;
+}
+
+h1 {
+  text-align: center;
+}
+
+a {
+  color: yellowgreen;
+}
+
+.gamelink {
   font-size: 25px
 }
-.image{
-     border-color:yellowgreen;
-     border-style: dashed;
-      border-width:3px;
-}
-body{
-  color:white;
-  font-family: 'Share Tech Mono', monospace;
-margin: auto;
-display: flex;
-}
-#wrapper{
-  display: flex;
-  flex-direction: row;
-  margin: auto;
 
+.image {
+  border-color: yellowgreen;
+  border-style: dashed;
+  border-width: 3px;
 }
-h1{
+
+.blink {
+  animation: blink-animation 1s steps(5, start) infinite;
+  -webkit-animation: blink-animation 1s steps(5, start) infinite;
+}
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
+.keyboard {
+  width: 1300px;
+  margin: auto;
+}
+
+#self {
+  width: 200px;
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-#self{
-  width:200px;
-
-    display: block;
-  margin-left: auto;
-  margin-right: auto;
+#wrapper {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
 
 }
 
-h1{
-  text-align: center;
-}
-#main{
+#main {
   display: flex;
   flex-direction: column;
 }
-a {
-  color: yellowgreen;
-}
-#frame{
-  background-image: url('screenoff.png');
+
+#frame {
+  background-image: url('home/images/screenoff.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  width:900px;
-  height:900px;
+  width: 900px;
+  height: 900px;
   margin: auto;
   -webkit-transition: background-image 0.5s ease-in-out;
-transition: background-image 0.5s ease-in-out;
+  transition: background-image 0.5s ease-in-out;
+}
 
-}
-#blocker{
-  background-color: black
-  position:absolute;
-}
-#window{
-  margin-left:150px;
+#window {
+  margin-left: 150px;
   margin-top: 115px;
   overflow: auto;
   height: 500px;
   width: 625px;
   color: white;
-
 }
-#start{
+
+#start {
   background-color: black;
   font-family: 'Share Tech Mono', monospace;
   color: white;
@@ -86,54 +102,37 @@ transition: background-image 0.5s ease-in-out;
   position: relative;
   margin-left: 100px;
   margin-top: 200px;
-
 }
-#start:hover{
+
+#start:hover {
   background-color: yellowgreen;
   color: black;
 }
-.blink {
-        animation: blink-animation 1s steps(5, start) infinite;
-        -webkit-animation: blink-animation 1s steps(5, start) infinite;
-      }
-      @keyframes blink-animation {
-        to {
-          visibility: hidden;
-        }
-      }
-      @-webkit-keyframes blink-animation {
-        to {
-          visibility: hidden;
-        }
-      }
 
-.keyboard{
-  width:1300px;
-  margin: auto;
+#buttons {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: -200px
 }
-#buttons{
-  margin-top:  auto;
-margin-bottom: auto;
-margin-left: -200px
-}
-#button:hover{
+
+#button:hover {
   background-color: yellowgreen;
   color: black;
 }
+
 #button:focus {
-  background-color:yellowgreen;
+  background-color: yellowgreen;
   color: black;
-
 }
-#button{
-margin: 10px;
+
+#button {
+  margin: 10px;
   font-family: 'Share Tech Mono', monospace;
   border-width: 10px;
-  border-color:black;
+  border-color: black;
   background-color: dimgray;
   color: white;
   font-weight: bolder;
   font-size: 25px;
-  display:block;
-
+  display: block;
 }

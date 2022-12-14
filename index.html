@@ -1,154 +1,139 @@
-
 <!DOCTYPE html>
 <html>
-<head>
-  <link rel="stylesheet" type="text/css" href="style.css">
-<title>Clare Mason</title>
-<link rel="icon" href="icon.png">
 
+<head>
+  <title>Clare Mason</title>
+  <link rel="icon" href="home/images/icon.png">
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
-
-
 <body>
+  <audio id="click" src="home/sounds/click.mp3"></audio>
+  <audio id="startup" src="home/sounds/startup.mp3"></audio>
+  <link rel="preload" href="home/images/screen.png" as="image">
+  <link rel="preload" href="home/images/keyboard.png" as="image">
 
-      <audio id="click" src="click.mp3" ></audio>
-      <audio autoplay="" id="startup" src="startup.mp3" ></audio>
-      <link rel="preload" href="screen.png" as="image">
-      <link rel="preload" href="keyboard.png" as="image">
+  <div id="wrapper">
+    <div id="main">
+      <div id="frame">
+        <div id="window">
+          <button id="start" onclick=startComp()>Start Computer?</button>
+          <h1 id="booting" class="blink" style="display:none"> Booting...</h1>
 
-<div id="wrapper">
-<div id="main">
-  <div id = "frame">
-  <div id="window">
-      <button id="start" onclick=startComp() >Start Computer?</button>
-
-    <h1 id="booting" class="blink" style="display:none" > Booting...</h1>
-  <div id = "intro"   style="display:none">
-<h1 >Hi, I'm Clare Mason 👋</h1>
-<div style="flex-direction:row">
-<img class="image" id="self" src="self.png">
-  <p> I'm a software engineer with experiance in fullstack development and Andorid/IOS applications.
-  I also love fiber crafts and making cute art. Welcome to my site!
- </p>
- <p>Open to hybrid (in Seattle)/remote software engineering opportunities.
-</p>
-</div>
-
-<a href="https://www.linkedin.com/in/clarermason/">LinkedIn</a>
-<a href="mailto:clarermason@gmail.com">Email</a>
-</div>
-
-<div id="work" style="display:none">
-<h1>Work Experience 👩‍💻</h1>
-
-  <p>👢 I worked a <a href="https://www.Nordstrom.com">Nordstrom</a> for several years building fullstack web applications for our employees to use. One of our products allowed users to search all the internal techincal documentation at once! (over 200k docs!)
-    <p>
-    💊 Most recently worked at <a href="https://www.auderenow.org">Audere</a> building IOS/Andorid applications for testing diseases such as Covid-19, Aids, and Malaria. I got to work with customers out of Kenya and South Africa.<p/>
-</p>
-    <p>See more on my <a href="https://www.linkedin.com/in/clarermason/">LinkedIn</a></p>
-</div>
-<div id="web" style="display:none">
-  <h1>Web Design 🕸️</h1>
-  <h2>🥣 Community Lunch On Capitol Hill</h2>
-
-  <p>Community Lunch provides a hot gourmet meal for those experiencing homelessness in the Capitol Hill area.
-     In 2022 I did a <a href="https://www.communitylunch.org">total webside rehaul</a> that included producing a short video and pictures for the homepage.  <p/>
-  <h2>🌱 Seeds Of Grace</h2>
-  <p>Seeds of Grace was a nonprofit based out of Kitsap County. Their mission was to build community gardens in areas of need. As of 2021 they
-  have gone inactive, but <a href="/seedsofgrace">I have archived the site for my personal use.</a> </p>
-  </div>
-
-
-
-    <div id="games" style="display:none">
-      <h1>Games 🕹️</h1>
-
-      <p>I like making cute web based games, often to share around with my friends and family.
-         All the graphics and coding are done by me. <p/>
-      <p>👚<a class="gamelink" href="/sweater">Sweater Designer</a> </p>
-      <p>🍕<a class="gamelink" href="./pizza">Pizza Rater</a></p>
-      <p>🌱<a class="gamelink" href="./plant">Plant Simulator</a></p>
-      <p>🚽<a class="gamelink" href="./bathroom">Extreme Bathroom Makeover</a></p>
-
-       </div>
-
-
-       <div id="blog" style="display:none">
-         <h1>Artist Blog 🎨</h1>
-         <p>I'm really into design of all type. I enjoy 3d printing, electorics, fashion design, knitting, and crocheting. Some of my work has been publish in <a href="https://makezine.com/">Make Magazine</a> and <a href="https://hackspace.raspberrypi.com/">HackSpace Magazine</a> and shown in local galleries.
-          If you want to see more of my projects
-         visit <a href="https://clarissakleveno.tumblr.com/">my artist blog</a>.</p>
-
-         <img style="height:125px" class="image" src="box.jpg"/>
-
-         <img style="height: 125px" class="image" src="leds.png"/>
-         <img style="height:125px"  class="image"src="earrings.jpg"/>
-
-
-
+          <div id="intro" style="display:none">
+            <h1>Hi, I'm Clare Mason 👋</h1>
+            <img class="image" id="self" src="home/images/self.png">
+            <p> I'm a software engineer with experiance in fullstack development and Andorid/IOS applications.
+              I also love fiber crafts and making cute art. Welcome to my site!
+            </p>
+            <p>Open to hybrid (in Seattle)/remote software engineering opportunities.</p>
+            <a href="https://www.linkedin.com/in/clarermason/">LinkedIn</a>
+            <a href="mailto:clarermason@gmail.com">Email</a>
           </div>
 
+          <div id="work" style="display:none">
+            <h1>Work Experience 👩‍💻</h1>
+            <p>👢 I worked a <a href="https://www.Nordstrom.com">Nordstrom</a> for several years building fullstack web
+              applications for our employees to use. One of our products allowed users to search all the internal
+              techincal documentation at once! (over 200k docs!)
+            <p>
+              💊 Most recently worked at <a href="https://www.auderenow.org">Audere</a> building IOS/Andorid
+              applications for testing diseases such as Covid-19, Aids, and Malaria. I got to work with customers out of
+              Kenya and South Africa.
+              <p />
+            </p>
+            <p>See more on my <a href="https://www.linkedin.com/in/clarermason/">LinkedIn</a></p>
+          </div>
 
+          <div id="web" style="display:none">
+            <h1>Web Design 🕸️</h1>
+            <h2>🥣 Community Lunch On Capitol Hill</h2>
+            <p>Community Lunch provides a hot gourmet meal for those experiencing homelessness in the Capitol Hill area.
+              In 2022 I did a <a href="https://www.communitylunch.org">total webside rehaul</a> that included producing
+              a short video and pictures for the homepage.
+              <p />
+            <h2>🌱 Seeds Of Grace</h2>
+            <p>Seeds of Grace was a nonprofit based out of Kitsap County. Their mission was to build community gardens
+              in areas of need. As of 2021 they
+              have gone inactive, but <a href="/seedsofgrace">I have archived the site for my personal use.</a> </p>
+          </div>
 
+          <div id="games" style="display:none">
+            <h1>Games 🕹️</h1>
+            <p>I like making cute web based games, often to share around with my friends and family.
+              All the graphics and coding are done by me.
+              <p />
+            <p>👚<a class="gamelink" href="/sweater">Sweater Designer</a> </p>
+            <p>🍕<a class="gamelink" href="./pizza">Pizza Rater</a></p>
+            <p>🌱<a class="gamelink" href="./plant">Plant Simulator</a></p>
+            <p>🚽<a class="gamelink" href="./bathroom">Extreme Bathroom Makeover</a></p>
+          </div>
+
+          <div id="blog" style="display:none">
+            <h1>Artist Blog 🎨</h1>
+            <p>I'm really into design of all type. I enjoy 3d printing, electorics, fashion design, knitting, and
+              crocheting. Some of my work has been publish in <a href="https://makezine.com/">Make Magazine</a> and <a
+                href="https://hackspace.raspberrypi.com/">HackSpace Magazine</a> and shown in local galleries.
+              If you want to see more of my projects
+              visit <a href="https://clarissakleveno.tumblr.com/">my artist blog</a>.</p>
+            <img style="height:125px" class="image" src="home/images/box.jpg" />
+            <img style="height: 125px" class="image" src="home/images/leds.png" />
+            <img style="height:125px" class="image" src="home/images/earrings.jpg" />
+          </div>
+
+        </div>
+      </div>
+
+      <img id="keyboard" class="keyboard" src="home/images/keyboard.png" style="display:none">
+      <img id="keyboardoff" class="keyboard" src="home/images/keyboardoff.png">
+    </div>
+
+    <div id="buttons" style="visibility:hidden">
+      <button id="button" onclick="select('intro')">Intro</button>
+      <button id="button" onclick="select('work')">Work Experiance</button>
+      <button id="button" onclick="select('web')">Web Design</button>
+      <button id="button" onclick="select('games')">Games</button>
+      <button id="button" onclick="select('blog')">Artist Blog</button>
+    </div>
   </div>
 
-</div>
-
-<img id="keyboard"  class="keyboard" src="keyboard.png" style="display:none">
-<img id="keyboardoff" class="keyboard" src="keyboardoff.png" >
-
-</div>
-
-<div id="buttons" style="visibility:hidden" >
-   <button id="button" onclick="select('intro')">Intro</button>
-  <button id="button" onclick="select('work')">Work Experiance</button>
-  <button id="button" onclick="select('web')">Web Design</button>
-  <button id="button" onclick="select('games')">Games</button>
-  <button id="button" onclick="select('blog')">Artist Blog</button>
-
-</div>
-</div>
 </body>
 </html>
+
 <script>
-let booting = document.getElementById('booting')
-let current =document.getElementById('intro')
-var click = document.getElementById("click");
-var startup = document.getElementById("startup");
-var start =  document.getElementById("start");
-var buttons =  document.getElementById("buttons");
-var keyboard =  document.getElementById("keyboard");
-var keyboardoff =  document.getElementById("keyboardoff");
-var frame = document.getElementById("frame");
-function startComp(){
-  start.style.display = "none";
-  booting.style.display = "block";
-  frame.style.backgroundImage= "url('screen.png')";
-  startup.play();
-  setTimeout(function() {
-    booting.style.display = "none";
-    current.style.display = "block";
-    buttons.style.visibility = "visible";
-    keyboardoff.style.display="none";
-    keyboard.style.display="block";
+  let booting = document.getElementById('booting')
+  let current = document.getElementById('intro')
+  var click = document.getElementById("click");
+  var startup = document.getElementById("startup");
+  var start = document.getElementById("start");
+  var buttons = document.getElementById("buttons");
+  var keyboard = document.getElementById("keyboard");
+  var keyboardoff = document.getElementById("keyboardoff");
+  var frame = document.getElementById("frame");
 
-  }, 2000);
-}
+  function startComp() {
+    start.style.display = "none";
+    booting.style.display = "block";
+    frame.style.backgroundImage = "url('home/images/screen.png')";
+    startup.play();
+    setTimeout(function () {
+      booting.style.display = "none";
+      current.style.display = "block";
+      buttons.style.visibility = "visible";
+      keyboardoff.style.display = "none";
+      keyboard.style.display = "block";
+    }, 2000);
+  }
 
-
-function select(name) {
-  var x = document.getElementById(name);
-  if( x != current){
-  x.style.display = "block";
-  current.disabled = false;
-  current.style.display = "none";
-  current.disabled = true;
-  console.log(current.disabled)
-  current = x;
-  click.play();
-}
-
-
-}
+  function select(name) {
+    var x = document.getElementById(name);
+    if (x != current) {
+      x.style.display = "block";
+      current.disabled = false;
+      current.style.display = "none";
+      current.disabled = true;
+      current = x;
+      click.play();
+    }
+  }
 </script>
