@@ -111,8 +111,8 @@ buildOutfit()
 function buildOutfit(){
   canvas.clear()
   addItem(currOutfit.sweater, {left:88, top:325, originX:'left', originY:"top",selectable: false})
-  addItem(currOutfit.pattern, {left:88, top:325, originX:'left', originY:"top",selectable: false})
-  addItem(currOutfit.icon, {left:88, top:325, originX:'left', originY:"top",selectable: false})
+  currOutfit.pattern && addItem(currOutfit.pattern, {left:88, top:325, originX:'left', originY:"top",selectable: false})
+  currOutfit.icon && addItem(currOutfit.icon, {left:88, top:325, originX:'left', originY:"top",selectable: false})
 
   addItem('base', {left:0, top:0, originX:'left', originY:"top",selectable: false})
 }
@@ -135,8 +135,9 @@ function previousItem(type, array){
 
 
 function addItem(name, settings){
-console.log('hello');
+
   var imgElement = document.getElementById(name);
+  console.log("tset2")
   fabric.Image.fromURL(imgElement.src, function(img) {
       img.set(settings);
       canvas.add(img);
