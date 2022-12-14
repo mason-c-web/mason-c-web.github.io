@@ -14,8 +14,6 @@
     <img src="images/title.png" style="width:1000px;">
     <button onclick="start()">Start</button>
   </div>
-  <link rel="preload" href="/images/toliet.png" as="image">
-
   <div id="content">
     <div id="menu">
       <div id="items">
@@ -95,8 +93,6 @@
   }
 
   var canvas = new fabric.Canvas('c');
-  $(document).ready(function () { drawStart() })
-
-  downloadLnk.addEventListener('click', download, false);
+  window.onload = drawStart() 
 
 </script>
