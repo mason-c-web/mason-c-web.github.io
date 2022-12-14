@@ -137,10 +137,13 @@ function previousItem(type, array){
 function addItem(name, settings){
 
   var imgElement = document.getElementById(name);
-
-  var imgInstance = new fabric.Image(imgElement, settings);
-      imgInstance.hasControls = imgInstance.hasBorders = false;
-  canvas.add(imgInstance);
+  fabric.Image.fromURL(imgElement.src, function(img) {
+      img.set(settings);
+      canvas.add(img);
+  });
+  // var imgInstance = new fabric.Image(imgElement, settings);
+  //     imgInstance.hasControls = imgInstance.hasBorders = false;
+  // canvas.add(imgInstance);
 }
 
 </script>
