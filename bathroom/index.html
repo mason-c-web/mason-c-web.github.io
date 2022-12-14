@@ -3,8 +3,9 @@
 <head>
     <title>Bathroom Designer</title>
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.1.0/fabric.all.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.7.13/fabric.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script src="sprite.class.js"></script>
 
 <style>
 
@@ -96,7 +97,7 @@ img{
 <div id="content">
 <div id="menu">
   <div id ="items">
-  <h1>Click to add items to your bathroom</h1>
+  <h1>Add items to your bathroom. Click to move them around.</h1>
 
   <img src="images/toliet paper.png" style="width:50px;" onclick="newItem('toliet paper.png')">
   <img src="images/plunger.png" onclick="newItem('plunger.png')">
@@ -124,9 +125,9 @@ img{
 		<canvas id="c"  width='552' height="650"  ></canvas>
 </div>
 <div id="end">
-<button onclick="reset()">Play again?</button>
-  <button id="downloadLnk" download="YourBathroom.jpg">Save your bathroom</button>
+  <h1>That's a nice bathroom.</h1>
 
+<button onclick="reset()">Play again?</button>
 </div>
 
 </div>
@@ -134,8 +135,7 @@ img{
 
 
 
-<script>
-</script>
+
 
 </html>
 <script>
@@ -159,9 +159,14 @@ console.log("draw toliet");
 });
 
 }
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
 function newItem(url){
   fabric.Image.fromURL('images/'+url, function(img) {
-  canvas.add(img.set({left:150, top:150, originX:'left', originY:"top", hasBorders: false,
+  canvas.add(img.set({left:getRandomInt(500), top:getRandomInt(600), originX:'left', originY:"top", hasBorders: false,
 hasControls: false,
 hasRotatingPoint: false, selectable: true}).scale(.6));
   });
