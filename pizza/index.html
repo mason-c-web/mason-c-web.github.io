@@ -108,7 +108,7 @@ var canvas = new fabric.Canvas('canvas');
 var makepizza = new fabric.Image(pizzabase, {
         		left: 30,top: 30,    selectable: false
 });
-        	reset();
+window.onload =reset();
 
         function getTopping(x,y,a,b,topping){
         for(i=0; i<1; i++ ){
@@ -155,7 +155,6 @@ hasRotatingPoint: false});
 
 
 function reset(){
-	console.log("plz");
 		var rect = new fabric.Rect({
   left: 0,
   top: 0,
@@ -167,10 +166,7 @@ function reset(){
 
 // "add" rectangle onto canvas
 canvas.add(rect);
-
   		canvas.add(makepizza);
-
-
 }
 
 
