@@ -45,6 +45,9 @@ h1{
 cursor{
   color:red;
 }
+h1{
+  text-align: center;
+}
 #main{
   display: flex;
   flex-direction: column;
@@ -53,12 +56,19 @@ a {
   color: yellowgreen;
 }
 #frame{
-  background-image: url('screen.png');
+  background-image: url('screenoff.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
   width:900px;
   height:900px;
   margin: auto;
+  -webkit-transition: background-image 0.5s ease-in-out;
+transition: background-image 0.5s ease-in-out;
+
+}
+#blocker{
+  background-color: black
+  position:absolute;
 }
 #window{
   margin-left:150px;
@@ -69,7 +79,39 @@ a {
   color: white;
 
 }
-#keyboard{
+#start{
+  background-color: black;
+  font-family: 'Share Tech Mono', monospace;
+  color: white;
+  font-weight: bolder;
+  font-size: 30px;
+  border-width: 0;
+  font-size: 50px;
+  position: relative;
+  margin-left: 100px;
+  margin-top: 200px;
+
+}
+#start:hover{
+  background-color: yellowgreen;
+  color: black;
+}
+.blink {
+        animation: blink-animation 1s steps(5, start) infinite;
+        -webkit-animation: blink-animation 1s steps(5, start) infinite;
+      }
+      @keyframes blink-animation {
+        to {
+          visibility: hidden;
+        }
+      }
+      @-webkit-keyframes blink-animation {
+        to {
+          visibility: hidden;
+        }
+      }
+
+.keyboard{
   width:1300px;
   margin: auto;
 }
@@ -81,6 +123,11 @@ margin-left: -200px
 #button:hover{
   background-color: yellowgreen;
   color: black;
+}
+#button:focus {
+  background-color:yellowgreen;
+  color: black;
+
 }
 #button{
 margin: 10px;

@@ -4,18 +4,28 @@
 <head>
   <link rel="stylesheet" type="text/css" href="style.css">
 <title>Clare Mason</title>
+<link rel="icon" href="icon.png">
+
 </head>
 
 
 
 <body>
+
+      <audio id="click" src="click.mp3" ></audio>
+      <audio autoplay="" id="startup" src="startup.mp3" ></audio>
+      <link rel="preload" href="screen.png" as="image">
+      <link rel="preload" href="keyboard.png" as="image">
+
 <div id="wrapper">
 <div id="main">
   <div id = "frame">
   <div id="window">
-  <div id = "intro">
+      <button id="start" onclick=startComp() >Start Computer?</button>
 
-<h1 >Hi, I'm Clare Mason</h1>
+    <h1 id="booting" class="blink" style="display:none" > Booting...</h1>
+  <div id = "intro"   style="display:none">
+<h1 >Hi, I'm Clare Mason 👋</h1>
 <div style="flex-direction:row">
 <img class="image" id="self" src="self.png">
   <p> I'm a software engineer with experiance in fullstack development and Andorid/IOS applications.
@@ -30,22 +40,21 @@
 </div>
 
 <div id="work" style="display:none">
-<h1>Work Experience</h1>
+<h1>Work Experience 👩‍💻</h1>
 
-  <p>I worked a <a href="https://www.Nordstrom.com">Nordstrom</a> for several years building internal fullstack applications.
-    I also most recently worked at <a href="https://www.auderenow.org">Audere</a> buidling IOS/Andorid applications<p/></div>
-
+  <p>👢 I worked a <a href="https://www.Nordstrom.com">Nordstrom</a> for several years building fullstack web applications for our employees to use. One of our products allowed users to search all the internal techincal documentation at once! (over 200k docs!)
+    <p>
+    💊 Most recently worked at <a href="https://www.auderenow.org">Audere</a> building IOS/Andorid applications for testing diseases such as Covid-19, Aids, and Malaria. I got to work with customers out of Kenya and South Africa.<p/>
+</p>
+    <p>See more on my <a href="https://www.linkedin.com/in/clarermason/">LinkedIn</a></p>
+</div>
 <div id="web" style="display:none">
-  <h1>Web Design</h1>
+  <h1>Web Design 🕸️</h1>
+  <h2>🥣 Community Lunch On Capitol Hill</h2>
 
-<p1>I have some done work with local group to create useful websites.</p1>
-
-  <h1>Community Lunch On Capitol Hill</h1>
-
-  <p>No questions asked, Community Lunch provides a hot gourmet meal and loads of take away goodies for those experiencing homelessness and under served in the Capitol Hill area
-    I currently sit on the board and act as webmaster. In 2022 I did a <a href="https://www.communitylunch.org">total webside rehaul</a> that included producing a a short video for the homepage. Volunteer and information about the program and now
-    easy to find! <p/>
-  <h1>Seeds Of Grace</h1>
+  <p>Community Lunch provides a hot gourmet meal for those experiencing homelessness in the Capitol Hill area.
+     In 2022 I did a <a href="https://www.communitylunch.org">total webside rehaul</a> that included producing a short video and pictures for the homepage.  <p/>
+  <h2>🌱 Seeds Of Grace</h2>
   <p>Seeds of Grace was a nonprofit based out of Kitsap County. Their mission was to build community gardens in areas of need. As of 2021 they
   have gone inactive, but <a href="/seedsofgrace">I have archived the site for my personal use.</a> </p>
   </div>
@@ -53,7 +62,7 @@
 
 
     <div id="games" style="display:none">
-      <h1>Games</h1>
+      <h1>Games 🕹️</h1>
 
       <p>I like making cute web based games, often to share around with my friends and family.
          All the graphics and coding are done by me. <p/>
@@ -66,9 +75,9 @@
 
 
        <div id="blog" style="display:none">
-         <h1>Artist Blog</h1>
-         <p>I'm really into design of all type. I enjoy 3d printing, electorics, fashion design,knitting, and crocheting. Some of my work has been publish in <a href="https://makezine.com/">Make Magazine</a> and <a href="https://hackspace.raspberrypi.com/">HackSpace Magazine</a>.
-            If you want to see more of my projects
+         <h1>Artist Blog 🎨</h1>
+         <p>I'm really into design of all type. I enjoy 3d printing, electorics, fashion design, knitting, and crocheting. Some of my work has been publish in <a href="https://makezine.com/">Make Magazine</a> and <a href="https://hackspace.raspberrypi.com/">HackSpace Magazine</a> and shown in local galleries.
+          If you want to see more of my projects
          visit <a href="https://clarissakleveno.tumblr.com/">my artist blog</a>.</p>
 
          <img style="height:125px" class="image" src="box.jpg"/>
@@ -86,11 +95,12 @@
 
 </div>
 
-<img id="keyboard" src="keyboard.png">
+<img id="keyboard"  class="keyboard" src="keyboard.png" style="display:none">
+<img id="keyboardoff" class="keyboard" src="keyboardoff.png" >
 
 </div>
 
-<div id="buttons" >
+<div id="buttons" style="visibility:hidden" >
    <button id="button" onclick="select('intro')">Intro</button>
   <button id="button" onclick="select('work')">Work Experiance</button>
   <button id="button" onclick="select('web')">Web Design</button>
@@ -102,13 +112,41 @@
 </body>
 </html>
 <script>
+let booting = document.getElementById('booting')
 let current =document.getElementById('intro')
+var click = document.getElementById("click");
+var startup = document.getElementById("startup");
+var start =  document.getElementById("start");
+var buttons =  document.getElementById("buttons");
+var keyboard =  document.getElementById("keyboard");
+var keyboardoff =  document.getElementById("keyboardoff");
+var frame = document.getElementById("frame");
+function startComp(){
+  start.style.display = "none";
+  booting.style.display = "block";
+  frame.style.backgroundImage= "url('screen.png')";
+  startup.play();
+  setTimeout(function() {
+    booting.style.display = "none";
+    current.style.display = "block";
+    buttons.style.visibility = "visible";
+    keyboardoff.style.display="none";
+    keyboard.style.display="block";
+
+  }, 2000);
+}
+
+
 function select(name) {
   var x = document.getElementById(name);
   if( x != current){
   x.style.display = "block";
+  current.disabled = false;
   current.style.display = "none";
+  current.disabled = true;
+  console.log(current.disabled)
   current = x;
+  click.play();
 }
 
 
