@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=DynaPuff">
+</head>
+<body>
+
+
+  <audio id="beanSound" src="bean.mp3" loop="loop"></audio>
+
+  <h1 id='bean'>Bean<h1>
+    <div id='beans'>
+<button onclick="bean()" id='beanButton1' class="button">Bean!</button>
+<button onclick="bean()" id='beanButton2' class="button">Bean?</button>
+<button onclick="bean()" id='beanButton3' class="button">Bean...</button>
+</div>
+
+<p style="display:none; font-size:10px" id="music">*music incoming*</p>
+<img src='heart.gif' id='gif1' style='display:none'/>
+
+<img src='bean.gif' id='gif' style='display:none'/>
+<img src='heart.gif' id='gif2' style='display:none'/>
+<center><h1 id='beanBelow' style="display:none">Excited for many more adventures with you!<h1></center>
+
+</body>
+</html>
+<script>
+  var beanSound = document.getElementById("beanSound");
+
+  var count = 1
+  function bean(){
+    switch (count) {
+      case 1:
+      document.getElementById("beanButton1").innerHTML = "BeAn";
+      document.getElementById("beanButton2").innerHTML = "Beannnnnnnnn";
+      document.getElementById("beanButton3").innerHTML = "bean bean";
+      document.getElementById("bean").innerHTML = "bean???";
+      break;
+      case 2:
+      document.getElementById("beanButton1").innerHTML = "bean.";
+      document.getElementById("beanButton2").innerHTML = "BEAN?";
+      document.getElementById("beanButton3").innerHTML = "bean bean";
+      document.getElementById("bean").innerHTML = "BEAN!";
+        break;
+      case 3:
+      document.getElementById("beanButton1").innerHTML = "bEaN";
+      document.getElementById("beanButton2").innerHTML = "<img src='bean.png'>";
+      document.getElementById("beanButton3").innerHTML = "beanbeanbean ";
+      document.getElementById("bean").innerHTML = "Bean.";
+        break;
+      case 4:
+      document.getElementById("beanButton1").innerHTML = "ᵇᵉᵃⁿ";
+      document.getElementById("beanButton2").innerHTML = "legume";
+      document.getElementById("beanButton3").innerHTML = "beanbeanbeanbeanbeanbean";
+      document.getElementById("bean").innerHTML = "!!!Bean!!!";
+      document.getElementById("music").style.display = "inline";
+
+        break;
+      case 5:
+      document.getElementById("bean").innerHTML = "HAPPY BEANNIVERSARY MY SWEET LITTLE BEAN";
+      document.getElementById("beans").style.display = "none";
+      document.getElementById("music").style.display = "none";
+      document.getElementById("gif").style.display = "inline";
+      document.getElementById("gif1").style.display = "inline";
+
+      document.getElementById("gif2").style.display = "inline";
+      document.getElementById("beanBelow").style.display = "inline";
+
+    beanSound.play();
+
+        break;
+      default:
+      break;
+    }
+
+    count++
+  }
+
+
+</script>
