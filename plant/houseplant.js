@@ -1,3 +1,4 @@
+//aSBzdXJlIGxvdmUgcGl6emE=
 var waterLevel = 15;
 var happiness = 20;
 var sunshine = 10;
