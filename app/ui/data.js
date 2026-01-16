@@ -37,6 +37,3 @@ const data = {
 };
 
 export default data;
-
-// https://gifcities.org/
-//https://webmastering.neocities.org/graphics
