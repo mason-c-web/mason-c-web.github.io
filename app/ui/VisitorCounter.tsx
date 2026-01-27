@@ -1,4 +1,5 @@
 export function VisitorCounter() {
+  // This is counter doesn't actually count. It's just for the aesthetic.
   return (
     <div className="flex flex-col items-center ">
       <img

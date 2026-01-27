@@ -1,7 +1,6 @@
 @import "tailwindcss";
-@plugin "daisyui" {
-  themes: light --default, dark --prefersdark, valentine;
-}
+@plugin "daisyui";
+
 .main-box{
     background-color: black;
     border: double 7px /* total added thickness of lines and gap between */ white;
@@ -12,10 +11,8 @@
   color:#c030ab;
 }
 
-body { 
-    font-family: "Lucida Console", "Courier New", monospace;
+html { 
+font-family: "Lucida Console", "Courier New", monospace;
 background-color: black;
 color: white
 }
-
-

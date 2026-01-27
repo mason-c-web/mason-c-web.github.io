@@ -1,18 +1,20 @@
-import data from "./data";
+import { PageData } from "./pageData";
 
-export function PageContent(props: { index: number }) {
-  const page = data.userData[props.index];
+export function PageContent(props: { pageData: PageData }) {
+  const { image, titleImage, titleDecorator, descriptionHTML } = props.pageData;
   return (
-    <div className={"hero-content flex-col lg:flex-row "}>
-      <img src={page.image} className="max-w-sm  " />
+    <div className="main-box">
+      <div className={"hero-content flex-col lg:flex-row "}>
+        <img src={image} className="max-w-sm  " />
 
-      <div>
-        <div className="flex flex-row items-end ">
-          <img src={page.titleImage} />
-          <img src={page.titleImage2} />
+        <div>
+          <div className="lg:flex lg:flex-row items-end max-w-sm ">
+            <img src={titleImage} />
+            <img src={titleDecorator} />
+          </div>
+
+          {descriptionHTML}
         </div>
-
-        {page.descriptionHTML}
       </div>
     </div>
   );
