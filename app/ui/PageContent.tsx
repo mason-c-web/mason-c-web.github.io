@@ -5,10 +5,10 @@ export function PageContent(props: { pageData: PageData }) {
   return (
     <div className="main-box">
       <div className={"hero-content flex-col lg:flex-row "}>
-        <img src={image} className="object-contain md:object-cover" />
+        <img src={image} className="object-contain md:object-cover p-8" />
 
         <div>
-          <div className="lg:flex lg:flex-row items-end max-w-sm ">
+          <div className="lg:flex md:flex lg:flex-row med:flex-row items-end max-w-sm ">
             <img src={titleImage} />
             <img src={titleDecorator} />
           </div>
