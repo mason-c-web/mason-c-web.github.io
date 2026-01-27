@@ -5,7 +5,7 @@ export function PageContent(props: { pageData: PageData }) {
   return (
     <div className="main-box">
       <div className={"hero-content flex-col lg:flex-row "}>
-        <img src={image} className="max-w-sm  " />
+        <img src={image} className="object-contain md:object-cover" />
 
         <div>
           <div className="lg:flex lg:flex-row items-end max-w-sm ">

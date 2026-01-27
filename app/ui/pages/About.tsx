@@ -22,8 +22,8 @@ export function About() {
         , <Link href="https://github.com/mason-c-web" title="GitHub" />, or{" "}
         <Link href="mailto:clarermason@gmail.com" title="send me a email" />!
       </p>
-
-      <img src="https://blob.gifcities.org/gifcities/66PVHQI3WTVHAMX4RC4VNSLOSBCO4BPS.gif" />
+      {/* 
+      <img src="https://blob.gifcities.org/gifcities/66PVHQI3WTVHAMX4RC4VNSLOSBCO4BPS.gif" /> */}
     </>
   );
 }
