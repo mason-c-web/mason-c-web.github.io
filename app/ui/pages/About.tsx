@@ -23,7 +23,10 @@ export function About() {
         <Link href="mailto:clarermason@gmail.com" title="send me a email" />!
       </p>
 
-      <img src="https://blob.gifcities.org/gifcities/66PVHQI3WTVHAMX4RC4VNSLOSBCO4BPS.gif" />
+      <img
+        alt="row of white sparkles"
+        src="https://blob.gifcities.org/gifcities/66PVHQI3WTVHAMX4RC4VNSLOSBCO4BPS.gif"
+      />
     </>
   );
 }

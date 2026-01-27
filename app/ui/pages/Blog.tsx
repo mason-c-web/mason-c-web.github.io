@@ -22,7 +22,10 @@ export function Blog() {
         corporate merch once and for all."
         />
       </p>
-      <img src="https://blob.gifcities.org/gifcities/GH365M7YYOMLHHADCBFGVWIKAVTIHYBJ.gif" />
+      <img
+        alt="black and white cat head blinking"
+        src="https://blob.gifcities.org/gifcities/GH365M7YYOMLHHADCBFGVWIKAVTIHYBJ.gif"
+      />
     </>
   );
 }

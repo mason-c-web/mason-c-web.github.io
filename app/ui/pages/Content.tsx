@@ -28,7 +28,10 @@ export function Content() {
         />
       </p>
 
-      <img src="https://blob.gifcities.org/gifcities/DROJ2XHWJ7JGVD7CLBGFWUBHNP2HC5HG.gif" />
+      <img
+        alt="red dasiy spinning"
+        src="https://blob.gifcities.org/gifcities/DROJ2XHWJ7JGVD7CLBGFWUBHNP2HC5HG.gif"
+      />
     </>
   );
 }
