@@ -5,8 +5,8 @@ export function Content() {
     <>
       <p className="py-6">
         Working in a makerspace taught me I really like making educational
-        videos. I currently produce a short form form series about Seattle
-        History and community spaces called{" "}
+        videos. I currently produce a short form series about Seattle History
+        and community spaces called{" "}
         <Link
           href="https://www.youtube.com/channel/UCsNpIT9GFANGkl-Ke0c_tgA/"
           title="Seattle For You"
@@ -19,9 +19,8 @@ export function Content() {
         !
         <br />
         <br />
-        I've also produced videos for other brands (mostly non profits) like
-        Community Lunch On Captiol Hill, Seattle Dodgeball, and Sakura Con you
-        can view in my{" "}
+        I've also produced videos for other brands like Community Lunch On
+        Captiol Hill, Seattle Dodgeball, and Sakura Con you can view in my{" "}
         <Link
           href="https://vimeo.com/clarermason"
           title="Nonprofit Portfolio"

@@ -5,13 +5,13 @@ export function About() {
     <>
       <p className="py-6">
         I'm a software engineer looking to make the transition to software
-        communications. My interest include, video editing, knitting my own
-        clothes, front end design and web accessibility, and 2000's design
-        aesthetics. Welcome to my site!
+        communications. My interests include, video editing, knitting my own
+        clothes, web accessibility, and 2000's design aesthetics. Welcome to my
+        website!
         <br />
         <br />
         Open to hybrid (in Seattle) or remote opportunities in Developer
-        Relations, Technical Content Creation, or Accessibility Engineering
+        Relations, Technical Content Creation, or Accessibility Engineering.
         <br />
         <br />
         Check out my{" "}

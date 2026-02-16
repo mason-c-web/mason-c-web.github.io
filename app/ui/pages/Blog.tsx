@@ -9,13 +9,13 @@ export function Blog() {
         write about my projects, front end tutorials, and other engineering
         related topics.
         <br />
-        <br />I also write for the{" "}
+        <br />I also run the{" "}
         <Link
           href="https://sustainablecapitolhill.org/blog/"
-          title="Sustainable Capitol Hill on their blog"
-        />{" "}
-        about sustainability topics, and produce a volunteer interview series. I
-        get to write about passions for sewing, community building, and{" "}
+          title="Sustainable Capitol Hill blog"
+        />
+        {". "}I produce a volunteer interview series, and get to write about
+        passions for sewing, community building, and{" "}
         <Link
           href="https://sustainablecapitolhill.org/stop-giving-away-free-branded-t-shirts-but-if-you-insist-heres-how-we-made-our-own-inexpensively-from-secondhand-materials/"
           title="ending
